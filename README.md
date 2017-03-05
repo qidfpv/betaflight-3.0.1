@@ -2,7 +2,7 @@
 
 ![Betaflight](https://camo.githubusercontent.com/8178215d6cb90842dc95c9d437b1bdf09b2d57a7/687474703a2f2f7374617469632e726367726f7570732e6e65742f666f72756d732f6174746163686d656e74732f362f312f302f332f372f362f61393038383930302d3232382d62665f6c6f676f2e6a7067)
 
-This is Betaflight version 3.0.1 when using hse oscillator 16 MHz and overclocking the MCU STM32. The update are:
+This is Betaflight version 3.0.1 when using hse oscillator 16 MHz and overclocking the MCU STM32F30x. The update are:
 
 1. system core clock from 72 MHz to 80 MHz.
 2. hse value from 8 MHz to 16 MHz.
