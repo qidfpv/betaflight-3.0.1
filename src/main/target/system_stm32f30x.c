@@ -45,9 +45,9 @@
   *-----------------------------------------------------------------------------
   *        System Clock source                    | PLL (HSE)
   *-----------------------------------------------------------------------------
-  *        SYSCLK(Hz)                             | 72000000
+  *        SYSCLK(Hz)                             | 80000000
   *-----------------------------------------------------------------------------
-  *        HCLK(Hz)                               | 72000000
+  *        HCLK(Hz)                               | 80000000
   *-----------------------------------------------------------------------------
   *        AHB Prescaler                          | 1
   *-----------------------------------------------------------------------------
@@ -57,9 +57,9 @@
   *-----------------------------------------------------------------------------
   *        HSE Frequency(Hz)                      | 16000000
   *----------------------------------------------------------------------------
-  *        PLLMUL                                 | 9
+  *        PLLMUL                                 | 5
   *-----------------------------------------------------------------------------
-  *        PREDIV                                 | 2
+  *        PREDIV                                 | 1
   *-----------------------------------------------------------------------------
   *        USB Clock                              | ENABLE
   *-----------------------------------------------------------------------------
@@ -127,7 +127,7 @@ uint32_t hse_value = HSE_VALUE;
   * @{
   */
 
-  uint32_t SystemCoreClock = 72000000;
+  uint32_t SystemCoreClock = 80000000;
 
   __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
 
@@ -333,9 +333,7 @@ void SetSysClock(void)
     RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE | RCC_CFGR_PLLMULL));
 
     if (HSE_VALUE == 16000000) {
-        RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_PREDIV1 | RCC_CFGR_PLLMULL9);
-        RCC->CFGR2 &= (uint32_t)((uint32_t)~(RCC_CFGR2_PREDIV1));
-        RCC->CFGR2 |= (uint32_t)(RCC_CFGR2_PREDIV1_DIV2);		
+        RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_PREDIV1 | RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLMULL5);
     }
     else {
         RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_PREDIV1 | RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLMULL9);
