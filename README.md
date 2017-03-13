@@ -4,11 +4,10 @@
 
 _______
 
-This is a modified version of Betaflight version 3.0.1 when using hse oscillator 16 MHz and overclocking the MCU STM32F30x becomes 80 MHz. For original version, please refer to Betaflight github - https://github.com/betaflight/betaflight/releases. The updates are:
+This is a modified version of Betaflight version 3.0.1 when using default hse oscillator 8 MHz and overclocking the MCU STM32F30x becomes 80 MHz. For original version, please refer to Betaflight github - https://github.com/betaflight/betaflight/releases. The updates are:
 
 1. system core clock from 72 MHz to 80 MHz.
-2. hse value from 8 MHz to 16 MHz.
-3. pllmull from 9 to 5.
+2. pllmull from 9 to 10.
 
 _______
 
